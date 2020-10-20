@@ -7,11 +7,21 @@ public class Task01 {
      * Не использовать стандартную библиотеку!
      */
     public static int min(int[] ints) {
-        return 0;
+        int min = Integer.MAX_VALUE;
+        for(int elem: ints){
+            if(elem < min){
+                min = elem;
+            }
+        }
+        return min;
     }
 
     public static float average(int[] ints) {
-        return 0;
+        float sum = 0;
+        for(int elem: ints){
+            sum += elem;
+        }
+        return sum / ints.length;
     }
 
 }
