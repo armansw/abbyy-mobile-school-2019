@@ -10,11 +10,11 @@ public class Task03 {
      * int x = condition ? trueValue : falseValue;
      */
     public static int booleanSerialize(boolean b) {
-        return b ? 1 : 0;
+        
     }
 
     public static boolean booleanDeserialize(int i) {
-        return i != 0 ? true : false;
+        
     }
 
 }
