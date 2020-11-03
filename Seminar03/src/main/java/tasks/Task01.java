@@ -11,7 +11,11 @@ public class Task01 {
      * Дубликаты, если equals true.
      */
     public static <T> Collection<T> removeDuplicates(Collection<T> collection) {
-        return null;
+        Collection<T> result = new HashSet<T>();
+        for(T element : collection){
+            result.add(element);
+        }
+        return result;
     }
 
 }

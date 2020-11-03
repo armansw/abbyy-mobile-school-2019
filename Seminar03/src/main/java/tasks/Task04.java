@@ -1,5 +1,7 @@
 package tasks;
 
+import java.util.Random;
+import java.util.Scanner;
 
 public class Task04 {
 
@@ -31,7 +33,26 @@ public class Task04 {
      *
      */
     public static void main(String[] args) {
-
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter limits");
+        int left = in.nextInt();
+        int right = in.nextInt();
+        String answer;
+        Random random = new Random();
+        while(true){
+            int randomNumber = random.nextInt(right + 1 - left) + left;
+            String guess = "The number is " + randomNumber + "?";
+            System.out.println(guess);
+            answer = in.nextLine();
+            if(answer.equals("yes") || !answer.equals("")){
+                System.out.println("Nice game!(finished)");
+                break;
+            }
+            else if(!answer.equals("no") || !answer.equals("")){
+                System.out.println("Not valid answer. Try again!");   
+            }
+        }
+        in.close();
     }
 
 }

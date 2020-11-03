@@ -12,18 +12,27 @@ import java.util.NoSuchElementException;
  */
 class ArrayIterator<T> implements Iterator<T> {
 
-    public ArrayIterator(T[] array) {
+    private T[] array;
+    private int curPosition;
 
+    public ArrayIterator(T[] array) {
+        this.array = array;
+        this.curPosition = 0;
     }
 
     @Override
     public boolean hasNext() {
-        return false;
+        return this.curPosition < this.array.length;
     }
 
     @Override
     public T next() {
         // Если следующего значения нет, то надо бросить NoSuchElementException
-        return null;
+        if (this.hasNext()){
+            return this.array[this.curPosition++];
+        }
+        else{
+            throw new NoSuchElementException();
+        }
     }
 }
